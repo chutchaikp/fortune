@@ -12,13 +12,23 @@ String.prototype.reverse = function () {
   return this.split("").reverse().join("");
 };
 
+let timer = null;
+
 const Main = () => {
   const [prevs, setPrevs] = useState([]);
   const [win, setWin] = useState(0);
   const [fails, setFails] = useState([]);
+  const [isRunning, setIsRunning] = useState(false);
+
+  const [first, setFirst] = useState(0);
+  const [second, setSecond] = useState(0);
 
   useEffect(() => {
     console.log(data);
+
+    return () => {
+      timer = null;
+    };
   }, []);
 
   const runFirework = () => {
@@ -55,6 +65,7 @@ const Main = () => {
       }, 250);
     } catch (error) {}
   };
+
   function reverseString(str) {
     return str.split("").reverse().join("");
   }
@@ -96,7 +107,7 @@ const Main = () => {
     }
   };
 
-  const load = () => {
+  const loadJson = () => {
     try {
       let nums = [];
 
@@ -126,10 +137,43 @@ const Main = () => {
     }
   };
 
+  // timer utility
+  const handleStartTimer = () => {
+    if (isRunning === true) {
+      handleStopTimer();
+      return;
+    }
+
+    setIsRunning(true);
+
+    timer = setInterval(() => {
+      let num = _.random(0, 9);
+      setFirst(num);
+      num = _.random(0, 9);
+      setSecond(num);
+    }, 30);
+  };
+
+  const handleStopTimer = () => {
+    if (isRunning === false) return;
+    setIsRunning(false);
+
+    clearInterval(timer);
+    timer = null;
+  };
+
   return (
     <div className="main">
       <div className="wrapper">
-        <button onClick={load}>READ JSON</button>
+        <div className="pre">
+          <button onClick={handleStartTimer}>start/stop testing</button>
+          <div>
+            <span>{first}</span>
+            <span>{second}</span>
+          </div>
+        </div>
+
+        <button onClick={loadJson}>READ JSON</button>
         <button onClick={gen}>GENERATE RANDOM NUMBER</button>
 
         <span className="win">{_.padStart(win, 2, "0")}</span>

@@ -38,6 +38,30 @@ $myLinkColor: #09d3ac;
       color: white;
       font-size: 2rem;
     }
+
+    .pre {
+      background-color: rgb(75, 75, 75);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        border-width: 5px;
+        cursor: help;
+        font-family: "Silkscreen";
+        font-size: 1.5rem;
+      }
+      button:active {
+        background-color: rgba(0, 255, 217, 0.116);
+      }
+
+      span {
+        font-size: 3rem;
+      }
+    }
   }
 
   h1 {

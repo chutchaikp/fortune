@@ -3,8 +3,15 @@
 - How to use Github 
 - How to .gitignore
 - How to .env
+- How to vscode, exclude files
+- How to snippet
+- How to verify unused and outdate package [npm-check or depcheck]
 
 - How to use 'scss' in React App
+- How to lodash
+- How to work with json file
+- How to setInterval
+
 - How to use free host Netlify.com
 
 <!-- # Getting Started with Create React App
