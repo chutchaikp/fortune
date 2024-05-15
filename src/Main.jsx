@@ -4,6 +4,7 @@ import _ from "lodash";
 import data from "./data.json"; // assert {type: 'json'};
 
 import "./main.scss";
+import toast, { Toaster } from "react-hot-toast";
 
 // GENERATE 1 NUMBER EXCEPT PREV NUMBER FROM JSON
 
@@ -141,6 +142,18 @@ const Main = () => {
   const handleStartTimer = () => {
     if (isRunning === true) {
       handleStopTimer();
+
+      toast.success("Successfully created!");
+
+      // toast.promise(
+      //   saveSettings(settings),
+      //    {
+      //      loading: 'Saving...',
+      //      success: <b>Settings saved!</b>,
+      //      error: <b>Could not save.</b>,
+      //    }
+      //  );
+
       return;
     }
 
@@ -166,6 +179,8 @@ const Main = () => {
     <div className="main">
       <div className="wrapper">
         <div className="pre">
+          {/* TODO: toast wirh promise */}
+          {/* TODO: how to capture clicking outside the button */}
           <button onClick={handleStartTimer}>start/stop testing</button>
           <div>
             <span>{first}</span>
@@ -181,21 +196,9 @@ const Main = () => {
         <span className="prevs">{prevs.join(", ")}</span>
       </div>
 
-      {/* <h1> main </h1>
-
-      <span>Lorem ipsum dolor sit amet.</span>
-
-      <span className="link">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum,
-        aperiam
-      </span>
-
-      <div className="lorem">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-        asperiores voluptates, tempora molestias totam aspernatur fugit iure
-        velit, veniam dicta illum, corrupti eius suscipit laboriosam itaque quia
-        magnam nesciunt assumenda?
-      </div> */}
+      <div>
+        <Toaster position="top-left" reverseOrder={false} />
+      </div>
     </div>
   );
 };
