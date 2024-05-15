@@ -1,0 +1,59 @@
+$myColor: red;
+$myBackground: rgb(41, 45, 62);
+$myForColor: rgb(191, 199, 213);
+$myLinkColor: #09d3ac;
+
+.main {
+  background-color: $myBackground;
+  padding: 10px;
+  height: 100vh;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      border: 1px solid #09d3ac;
+      border-radius: 5px;
+      background-color: transparent;
+      border-color: #09d3ac;
+      color: #09d3ac;
+      padding: 5px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      padding: 1.5rem 0.375rem;
+      margin: 5px;
+    }
+
+    .win {
+      color: aqua;
+      font-size: 5rem;
+    }
+    .fails {
+      color: red;
+      font-size: 2rem;
+    }
+    .prevs {
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  h1 {
+    color: $myColor;
+  }
+
+  span {
+    color: rgb(191, 199, 213);
+  }
+
+  span.link {
+    color: #09d3ac;
+  }
+
+  .lorem {
+    background-color: aqua;
+    padding: 10px;
+  }
+}
