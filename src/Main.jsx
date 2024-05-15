@@ -139,20 +139,28 @@ const Main = () => {
   };
 
   // timer utility
+  const saveSettings = () =>
+    new Promise((resolve) => setTimeout(resolve, 120 * 1000));
   const handleStartTimer = () => {
     if (isRunning === true) {
       handleStopTimer();
 
-      toast.success("Successfully created!");
+      // toast.success("Successfully created!");
 
-      // toast.promise(
-      //   saveSettings(settings),
-      //    {
-      //      loading: 'Saving...',
-      //      success: <b>Settings saved!</b>,
-      //      error: <b>Could not save.</b>,
-      //    }
-      //  );
+      // toast.promise(saveSettings(), {
+      //   loading: "Saving...",
+      //   success: <b>Settings saved!</b>,
+      //   error: <b>Could not save.</b>,
+      // });
+
+      toast("Hello Darkness!", {
+        icon: "👏",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
 
       return;
     }
@@ -174,6 +182,86 @@ const Main = () => {
     clearInterval(timer);
     timer = null;
   };
+
+  //   const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
+  // toast.promise(
+  //     resolveAfter3Sec,
+  //     {
+  //       pending: 'Promise is pending',
+  //       success: 'Promise resolved 👌',
+  //       error: 'Promise rejected 🤯'
+  //     }
+  // )
+
+  // const functionThatReturnPromise = () => new Promise(resolve => setTimeout(resolve, 3000));
+  // toast.promise(
+  //     functionThatReturnPromise,
+  //     {
+  //       pending: 'Promise is pending',
+  //       success: 'Promise resolved 👌',
+  //       error: 'Promise rejected 🤯'
+  //     }
+  // )
+
+  // How to Promise
+  // const saveSettings = () =>
+  //   new Promise((resolve) => setTimeout(resolve, 120 * 1000));
+
+  // TODO
+  // https://marcuscode.com/lang/javascript/promise
+  function evenPromise(number) {
+    return new Promise((resolve, reject) => {
+      if (number % 2 == 0) {
+        resolve(`${number} is an even number`);
+      } else {
+        reject(new Error(`${number} is not an even number`));
+      }
+    });
+  }
+  evenPromise(2)
+    .then((value) => {
+      console.log(value);
+    })
+    .catch((err) => {
+      console.log(err.toString());
+    });
+
+  evenPromise(3)
+    .then((value) => {
+      console.log(value);
+    })
+    .catch((err) => {
+      console.log(err.toString());
+    });
+
+  // xxxxxxxxxxxxxxxxxxxx
+  const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
+  toast.promise(
+    resolveAfter3Sec,
+    {
+      pending: "Promise is pending",
+      success: "Promise resolved 👌",
+      error: "Promise rejected 🤯",
+    },
+    {
+      position: toast.POSITION.BOTTOM_CENTER,
+      icon,
+    }
+  );
+
+  const functionThatReturnPromise = () =>
+    new Promise((resolve, reject) => setTimeout(reject, 3000));
+  toast.promise(
+    functionThatReturnPromise,
+    {
+      pending: "Promise is pending",
+      success: "Promise resolved 👌",
+      error: "Promise rejected 🤯",
+    },
+    {
+      position: toast.POSITION.BOTTOM_CENTER,
+    }
+  );
 
   return (
     <div className="main">
