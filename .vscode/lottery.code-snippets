@@ -58,6 +58,14 @@
 	"React console log": {
 		"prefix": "logx",
 		"body": [
+			"console.log(`$1`);",
+			"$2"
+		],
+		"description": "Simple console log"
+	},
+	"React console log V2": {
+		"prefix": "lx",
+		"body": [
 			"console.log($1);",
 			"$2"
 		],

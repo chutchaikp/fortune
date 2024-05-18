@@ -4,7 +4,7 @@ import _ from "lodash";
 import data from "./data.json"; // assert {type: 'json'};
 
 import "./main.scss";
-import toast, { Toaster } from "react-hot-toast";
+import toast, { ToastBar, Toaster } from "react-hot-toast";
 
 // GENERATE 1 NUMBER EXCEPT PREV NUMBER FROM JSON
 
@@ -71,7 +71,7 @@ const Main = () => {
     return str.split("").reverse().join("");
   }
 
-  const gen = () => {
+  const generateNumberV2 = () => {
     try {
       if (_.isEmpty(prevs)) {
         setWin(-1);
@@ -83,16 +83,14 @@ const Main = () => {
 
       do {
         _num = _.random(1, 99);
-
         _fails.push(_num);
 
+        timer = setInterval(() => {
+          let _n = _.random(1, 99);
+          setFirst(_n);
+        }, 60);
+
         if (prevs.includes(_num) === true) {
-          // setFails((p) => {
-          //   return [_num, ...p];
-          // });
-
-          // _fails.push(_num);
-
           if (_fails.length > 20) {
             break;
           }
@@ -102,6 +100,38 @@ const Main = () => {
       setWin(_num);
       setFails(_fails);
 
+      // done
+      runFirework();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const generateNumber = () => {
+    try {
+      if (_.isEmpty(prevs)) {
+        setWin(-1);
+        return;
+      }
+
+      let _fails = [];
+      let _num = -3;
+
+      do {
+        _num = _.random(1, 99);
+        _fails.push(_num);
+
+        if (prevs.includes(_num) === true) {
+          if (_fails.length > 20) {
+            break;
+          }
+        }
+      } while (prevs.includes(_num) === true);
+
+      setWin(_num);
+      setFails(_fails);
+
+      // done
       runFirework();
     } catch (error) {
       console.log(error);
@@ -141,27 +171,10 @@ const Main = () => {
   // timer utility
   const saveSettings = () =>
     new Promise((resolve) => setTimeout(resolve, 120 * 1000));
+
   const handleStartTimer = () => {
     if (isRunning === true) {
       handleStopTimer();
-
-      // toast.success("Successfully created!");
-
-      // toast.promise(saveSettings(), {
-      //   loading: "Saving...",
-      //   success: <b>Settings saved!</b>,
-      //   error: <b>Could not save.</b>,
-      // });
-
-      toast("Hello Darkness!", {
-        icon: "👏",
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
-
       return;
     }
 
@@ -181,8 +194,14 @@ const Main = () => {
 
     clearInterval(timer);
     timer = null;
+    toast("Timer Stoped!", {
+      icon: "👏",
+      style: { borderRadius: "10px", background: "#333", color: "#fff" },
+    });
   };
 
+  // TODO: How to Promise
+  // TODO: What is Promize
   //   const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 3000));
   // toast.promise(
   //     resolveAfter3Sec,
@@ -209,75 +228,96 @@ const Main = () => {
 
   // TODO
   // https://marcuscode.com/lang/javascript/promise
-  function evenPromise(number) {
+  // function evenPromise(number) {
+  //   return new Promise((resolve, reject) => {
+  //     if (number % 2 == 0) {
+  //       resolve(`${number} is an even number`);
+  //     } else {
+  //       reject(new Error(`${number} is not an even number`));
+  //     }
+  //   });
+  // }
+  // evenPromise(2).then((value) => {
+  //     console.log(value);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err.toString());
+  //   });
+  // evenPromise(3).then((value) => {
+  //     console.log(value);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err.toString());
+  //   });
+
+  // -------------------------------------------------------------------
+  // Check diff 2 below
+  // variable
+  // execute function "resolveAfter3Sec" only 1 time only
+  const resolveAfter3Sec = new Promise((resolve, reject) => {
+    console.log(
+      "resolveAfter3Sec - set time out 3 seconds now at " +
+        new Date().toISOString()
+    );
+    setTimeout(resolve, 3000);
+  });
+  const handleToast1 = () => {
+    // debugger;
+    toast.promise(resolveAfter3Sec, {
+      // pending: "Promise is pending",
+      loading: "Promise is loading xxx",
+      success: "Promise resolved 👌",
+      error: "Promise rejected 🤯",
+    });
+  };
+
+  // function
+  // execute "functionThatReturnPromise" every time
+  const functionThatReturnPromise = () => {
     return new Promise((resolve, reject) => {
-      if (number % 2 == 0) {
-        resolve(`${number} is an even number`);
-      } else {
-        reject(new Error(`${number} is not an even number`));
-      }
+      console.log(
+        "functionThatReturnPromise - set time out 3 seconds now at " +
+          new Date().toISOString()
+      );
+      // Do AJAX
+      setTimeout(resolve, 3000);
     });
-  }
-  evenPromise(2)
-    .then((value) => {
-      console.log(value);
-    })
-    .catch((err) => {
-      console.log(err.toString());
-    });
+  };
 
-  evenPromise(3)
-    .then((value) => {
-      console.log(value);
-    })
-    .catch((err) => {
-      console.log(err.toString());
-    });
-
-  // xxxxxxxxxxxxxxxxxxxx
-  const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000));
-  toast.promise(
-    resolveAfter3Sec,
-    {
-      pending: "Promise is pending",
+  const handleToast2 = () => {
+    toast.promise(functionThatReturnPromise(), {
+      loading: "Promise is loading",
+      // pending: "Promise is pending",
       success: "Promise resolved 👌",
       error: "Promise rejected 🤯",
-    },
-    {
-      position: toast.POSITION.BOTTOM_CENTER,
-      icon,
-    }
-  );
+    });
+  };
 
-  const functionThatReturnPromise = () =>
-    new Promise((resolve, reject) => setTimeout(reject, 3000));
-  toast.promise(
-    functionThatReturnPromise,
-    {
-      pending: "Promise is pending",
-      success: "Promise resolved 👌",
-      error: "Promise rejected 🤯",
-    },
-    {
-      position: toast.POSITION.BOTTOM_CENTER,
-    }
-  );
+  const handleToast3 = () => {
+    toast.success("this is message", { icon: "👏" });
+  };
 
   return (
     <div className="main">
       <div className="wrapper">
         <div className="pre">
-          {/* TODO: toast wirh promise */}
+          {/* TODO: toast with promise */}
           {/* TODO: how to capture clicking outside the button */}
           <button onClick={handleStartTimer}>start/stop testing</button>
           <div>
             <span>{first}</span>
             <span>{second}</span>
           </div>
+          <div>
+            <button onClick={handleToast1}>toast 1</button>
+            <button onClick={handleToast2}>toast 2</button>
+            <button onClick={handleToast3}>toast 3</button>
+          </div>
         </div>
 
         <button onClick={loadJson}>READ JSON</button>
-        <button onClick={gen}>GENERATE RANDOM NUMBER</button>
+        <button onClick={generateNumber}>GENERATE V1 </button>
+        <button onClick={generateNumberV2}>GENERATE V2 </button>
 
         <span className="win">{_.padStart(win, 2, "0")}</span>
         <span className="fails">{fails.join(", ")}</span>
@@ -285,7 +325,30 @@ const Main = () => {
       </div>
 
       <div>
-        <Toaster position="top-left" reverseOrder={false} />
+        {/* <Toaster position="top-left" reverseOrder={false} /> */}
+        <Toaster position="top-left">
+          {(t) => (
+            <ToastBar
+              style={{
+                borderRadius: "20px",
+                background: "#546",
+                color: "#fff",
+              }}
+              toast={t}
+            >
+              {({ icon, message }) => (
+                <>
+                  {icon}
+                  {message}
+                  {t.type !== "loading" && (
+                    <button onClick={() => toast.dismiss(t.id)}>X</button>
+                  )}
+                  {/* {t.type === "loading" && <span>waiting ...</span>} */}
+                </>
+              )}
+            </ToastBar>
+          )}
+        </Toaster>
       </div>
     </div>
   );

@@ -1,13 +1,12 @@
 
-import Main from './Main';
+// import Main from './Main';
+// import Main from './Main2.js'
+import Main from './Main3.js'
+
 import './app.scss';
 const app = () => {
   return (
     <div >
-
-      {/* <div style={{ padding: '1rem' }}>
-        <button>hello</button>
-      </div> */}
 
       <Main />
 
