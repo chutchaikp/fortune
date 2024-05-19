@@ -1,5 +1,5 @@
 
-import { useEffect, useState, memo, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import _ from 'lodash'
 import data from "./data.json"; // assert {type: 'json'};
 
@@ -18,10 +18,9 @@ const Main4 = () => {
 
   console.log('Main4 > re-render')
 
-  const [start, setStart] = useState(false);
+  // const [start,] = useState(false);
 
-  const [res] = useGenerator(start)
-
+  // const [res] = useGenerator(start)
 
   console.log('Main4 > before-render --------------------')
   return (
