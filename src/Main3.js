@@ -1,11 +1,7 @@
 import { useEffect, useState } from 'react';
 import _ from 'lodash'
 
-
 import './main3.scss';
-// import { Button } from 'react-bootstrap';
-// import useGenerator from './useGenerator';
-
 
 const Main3 = () => {
   console.log('Main3 > re-render')
@@ -13,8 +9,6 @@ const Main3 = () => {
   const [counter, setCounter] = useState(0);
 
   const [start, setStart] = useState(false);
-
-  // let generator = useGenerator(start);
 
   // // what is useEffect parameter ?
   // useEffect((p1) => {
@@ -24,6 +18,7 @@ const Main3 = () => {
 
   // custom hook
   // re-render in it everytime
+
   const [res] = useGenerator(start, counter);
 
   useEffect(() => {
@@ -31,12 +26,8 @@ const Main3 = () => {
     console.log(`=========== random ============= ${_.padStart(res, 5, '0')} `)
   }, [res])
 
-
-
-
   useEffect(() => {
     console.log(`Main3 useEffect[]`);
-
 
   }, [])
 

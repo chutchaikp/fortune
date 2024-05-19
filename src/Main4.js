@@ -15,13 +15,7 @@ String.prototype.reverse = function () {
 }
 
 const Main4 = () => {
-
   console.log('Main4 > re-render')
-
-  // const [start,] = useState(false);
-
-  // const [res] = useGenerator(start)
-
   console.log('Main4 > before-render --------------------')
   return (
     <div className='main4'>
@@ -149,46 +143,46 @@ const JsxComponent = () => {
   )
 }
 
-let handlerInterval = null;
-const useGenerator = (cb = false) => {
-  console.log(`useGenerator re-render,`);
-  const [res, setRes] = useState(0);
+// let handlerInterval = null;
+// const use Generator = (cb = false) => {
+//   console.log(`use Generator re-render,`);
+//   const [res, setRes] = useState(0);
 
-  useEffect(() => {
-    console.log('useGenerator useEffect[cb]');
-    if (cb === false) {
-      if (handlerInterval) {
-        clearInterval(handlerInterval);
-        handlerInterval = null;
-      }
-    } else {
-      handlerInterval = setInterval(() => {
-        let n = _.random(0, 100)
-        console.log(`new random ${n} `);
+//   useEffect(() => {
+//     console.log('use Generator useEffect[cb]');
+//     if (cb === false) {
+//       if (handlerInterval) {
+//         clearInterval(handlerInterval);
+//         handlerInterval = null;
+//       }
+//     } else {
+//       handlerInterval = setInterval(() => {
+//         let n = _.random(0, 100)
+//         console.log(`new random ${n} `);
 
-        setRes(n)
+//         setRes(n)
 
-        if (n < 10) {
-          stop(handlerInterval)
-        }
-      }, 1000);
-    }
+//         if (n < 10) {
+//           stop(handlerInterval)
+//         }
+//       }, 1000);
+//     }
 
-    return () => {
-      console.log('clearInterval NOW!')
-      clearInterval(handlerInterval);
-      handlerInterval = null;
-    };
-  }, [cb]);
+//     return () => {
+//       console.log('clearInterval NOW!')
+//       clearInterval(handlerInterval);
+//       handlerInterval = null;
+//     };
+//   }, [cb]);
 
-  const stop = (handle) => {
-    console.log('clearInterval NOW!')
-    clearInterval(handle);
-    handle = null;
-  }
+//   const stop = (handle) => {
+//     console.log('clearInterval NOW!')
+//     clearInterval(handle);
+//     handle = null;
+//   }
 
-  console.log(`useGenerator return ${res} `);
-  return [res];
-}
+//   console.log(`use Generator return ${res} `);
+//   return [res];
+// }
 
 
