@@ -94,7 +94,7 @@ const JsxComponent = () => {
   useEffect(() => {
     console.log(`counter ${counter} n ${num}`);
 
-    if (counter > 100 && prevs.includes(num)) {
+    if (counter > 100 && !prevs.includes(num)) {
       stop();
     }
 
