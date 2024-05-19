@@ -68,24 +68,23 @@ code {
   border-radius: 10px;
 }
 
-button.button {
+/* button.button {
   cursor: pointer;
   line-height: 1.2;
   font-size: 1rem;
   font-weight: 500;
   background-color: var(--cp-color-13);
-
   padding: 10px;
   border: 0;
   border-radius: 4px;
   color: white;
   margin: 1px;
   border-width: 3px;
-}
+} */
 
-button.button:hover {
+/* button.button:hover {
   background-color: var(--cp-color-12);
-}
+} */
 
 span.link2 {
   color: var(--cp-color-link) !important;

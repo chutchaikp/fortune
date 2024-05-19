@@ -1,0 +1,117 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(215, 215, 215) !important;
+  padding-top: 2rem;
+}
+
+.main4 {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  // align-items: center;
+
+  .wrapper {
+    width: 700px;
+
+    // button {
+    //   margin-bottom: 1rem;
+    //   padding: 0.3rem 1rem 0.5rem;
+    //   font-size: 2rem;
+    //   font-family: "Silkscreen", sans-serif;
+    //   background: transparent;
+    //   border-radius: 10px;
+    //   border-width: 3px;
+    //   width: 200px;
+    //   cursor: pointer;
+
+    //   display: flex;
+    //   flex-direction: row;
+
+    //   .text {
+    //     flex: 2;
+    //   }
+
+    //   .counter {
+    //     flex: 1;
+    //   }
+
+    //   .win {
+    //     flex: 1;
+    //   }
+    // }
+
+    p {
+      font-size: 3rem;
+      font-family: "Silkscreen", sans-serif;
+      margin-top: 0.5rem;
+      color: rgb(154, 154, 155);
+    }
+
+    button:hover {
+      background-color: rgb(240, 239, 239);
+    }
+
+    button:focus {
+      border-color: red;
+    }
+
+    .jsx-component {
+      background-color: rgba(231, 228, 228, 0.824);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+
+      button {
+        margin: 1rem;
+        padding: 0.3rem 1rem 0.5rem;
+        font-size: 2rem;
+        font-family: "Silkscreen", sans-serif;
+        background: transparent;
+        border-radius: 10px;
+        border-width: 3px;
+        width: 400px;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        background-color: rgb(142, 142, 142);
+
+        .text {
+          flex: 2;
+        }
+
+        .counter {
+          flex: 1;
+        }
+
+        .win {
+          flex: 1;
+          color: aqua;
+        }
+      }
+
+      p {
+        font-size: 2rem;
+        font-family: "Silkscreen", sans-serif;
+        margin-top: 0.5rem;
+        color: rgb(154, 154, 155);
+      }
+    }
+  }
+}
+
+button {
+  margin-bottom: 1rem;
+  padding: 0.3rem 1rem 0.5rem;
+  font-size: 2rem;
+  font-family: "Silkscreen", sans-serif;
+  background: transparent;
+  border-radius: 10px;
+  border-width: 3px;
+  width: 300px;
+  cursor: pointer;
+}
