@@ -19,7 +19,7 @@ body {
 
   .wrapper {
     .jsx-component {
-      background-color: $demo-background-2;
+      // background-color: $demo-background-2;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -41,9 +41,7 @@ body {
         display: flex;
         flex-direction: row;
         align-items: center;
-        // gap: 5px;
         color: $demo-green-2;
-        // $demo-blue-1;
 
         .text {
           flex: 2;
@@ -51,8 +49,8 @@ body {
 
         .win {
           flex: 1;
-          // color: aqua;
           font-size: 5rem;
+          color: aquamarine;
         }
       }
       button:hover {
@@ -64,7 +62,6 @@ body {
         font-size: 2rem;
         font-family: "Silkscreen", sans-serif;
         margin-top: 0.5rem;
-        // color: rgb(154, 154, 155);
         color: $demo-blue-1;
       }
 
@@ -72,11 +69,16 @@ body {
         color: $color-yellow;
         width: 100%;
       }
+
+      // @media screen and (max-width: 500px) {
+      //   background-color: yellow;
+      //   padding: 2rem;
+      // }
     }
   }
 
   // background-color: $color-cream-2;
-  width: 500px;
+  // width: 500px;
   @media screen and (max-width: 1000px) {
     // background-color: red;
     padding: 0.5rem 1rem;
