@@ -4,6 +4,8 @@
 
 import { useEffect, useState, useRef } from 'react';
 import _ from 'lodash'
+import toast, { ToastBar, Toaster } from "react-hot-toast";
+
 import data from "./data.json"; // assert {type: 'json'};
 
 import './main4.scss';
@@ -48,6 +50,9 @@ const JsxComponent = () => {
   const [num, setNum] = useState(0);
 
   const stop = () => {
+
+    toast("DONE", { icon: "👏" });
+
     clearInterval(interval.current)
     // setCounter(0)
   }
@@ -134,50 +139,37 @@ const JsxComponent = () => {
       <p>
         {prevs.join(', ')}
       </p>
+
+
+      <div className="status">
+        <Toaster position="top-right">
+          {(t) => (
+            <ToastBar
+              style={{
+                borderRadius: "20px",
+                background: "#546",
+                color: "#fff",
+              }}
+              toast={t}
+            >
+              {({ icon, message }) => (
+                <>
+                  {icon}
+                  {message}
+                  {/* {t.type !== "loading" && (
+                    <button onClick={() => toast.dismiss(t.id)}>X</button>
+                  )} */}
+                  {/* {t.type === "loading" && <span>waiting ...</span>} */}
+                </>
+              )}
+            </ToastBar>
+          )}
+        </Toaster>
+      </div>
     </div>
   )
 }
 
-// let handlerInterval = null;
-// const use Generator = (cb = false) => {
-//   console.log(`use Generator re-render,`);
-//   const [res, setRes] = useState(0);
 
-//   useEffect(() => {
-//     console.log('use Generator useEffect[cb]');
-//     if (cb === false) {
-//       if (handlerInterval) {
-//         clearInterval(handlerInterval);
-//         handlerInterval = null;
-//       }
-//     } else {
-//       handlerInterval = setInterval(() => {
-//         let n = _.random(0, 100)
-//         console.log(`new random ${n} `);
-
-//         setRes(n)
-
-//         if (n < 10) {
-//           stop(handlerInterval)
-//         }
-//       }, 1000);
-//     }
-
-//     return () => {
-//       console.log('clearInterval NOW!')
-//       clearInterval(handlerInterval);
-//       handlerInterval = null;
-//     };
-//   }, [cb]);
-
-//   const stop = (handle) => {
-//     console.log('clearInterval NOW!')
-//     clearInterval(handle);
-//     handle = null;
-//   }
-
-//   console.log(`use Generator return ${res} `);
-//   return [res];
-// }
 
 
