@@ -7,6 +7,7 @@
 - How to snippet
 - How to verify unused and outdate package [npm-check or depcheck]
 
+- How to use Promise
 - How to use 'scss' in React App
 - How to lodash
 - How to work with json file

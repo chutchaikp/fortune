@@ -1,4 +1,7 @@
 
+// theme colors
+// C:\Users\wit\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\theme-defaults\themes
+
 import { useEffect, useState, useRef } from 'react';
 import _ from 'lodash'
 import data from "./data.json"; // assert {type: 'json'};
@@ -22,25 +25,9 @@ const Main4 = () => {
 
       <div className="wrapper">
 
-        {/* <button onClick={() => {
-          console.warn(``)
-          setStart(!start)
-        }}>{start === true ? "on" : "off"}</button>
-        <p> {res} </p> */}
-
-
-        {/* <button onClick={handleInterval3}>hello</button>
-        <hr />
-       
-        <h1> Main4 </h1>
-        <button onClick={handleCounter}>{counter}</button> */}
-
         {/* memo working */}
         <JsxComponent />
-
       </div>
-
-
     </div>
   )
 }
@@ -48,7 +35,6 @@ const Main4 = () => {
 export default Main4;
 
 // memo custom hook
-
 
 // let handlerJsxInterval = null;
 
@@ -63,8 +49,7 @@ const JsxComponent = () => {
 
   const stop = () => {
     clearInterval(interval.current)
-
-    setCounter(0)
+    // setCounter(0)
   }
 
   useEffect(() => {
@@ -78,6 +63,7 @@ const JsxComponent = () => {
       nums.push(parseInt(win2.reverse()));
     });
     setPrevs(nums);
+    setNum(nums[0])
 
     return () => {
       stop()
@@ -98,10 +84,13 @@ const JsxComponent = () => {
       e.preventDefault();
 
       // if ( interval.current) {
-      if (counter > 0) {
+      if (counter > 0 && counter < 100) {
         clearInterval(interval.current)
         setCounter(0)
         return
+      }
+      if (counter > 100) {
+        setCounter(0)
       }
 
       interval.current = setInterval(() => {
@@ -111,7 +100,7 @@ const JsxComponent = () => {
         setCounter((c) => c + 1)
         setNum(n)
 
-      }, 100);
+      }, 50);
     } catch (error) {
       console.log(error);
       stop();
@@ -122,19 +111,25 @@ const JsxComponent = () => {
   return (
     <div className='jsx-component' >
       <button className='buttonx' onClick={handleInterval}>
-        <span className='text'>
-          interval
-        </span>
-
-        <span className='counter'>
-          {_.padStart(counter, 2, '0')}
-        </span>
 
         <span className='win'>
           {_.padStart(num, 2, '0')}
         </span>
 
       </button>
+
+      <span className='counter'>
+        {/* {_.padStart(counter, 2, '0')} */}
+        {_.range(1, counter).map(() => {
+          return (<span style={{ margin: '8px', }}>
+            <img width={20} height={20}
+              draggable="false"
+              class="emoji"
+              alt="😷"
+              src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f637.svg" />
+          </span>)
+        })}
+      </span>
 
       <p>
         {prevs.join(', ')}

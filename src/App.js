@@ -5,13 +5,11 @@
 
 import Main from './Main4.js'
 
-import './app.scss';
+// import './app.scss';
 const app = () => {
   return (
     <div >
-
       <Main />
-
     </div>
   )
 }
