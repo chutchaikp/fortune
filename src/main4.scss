@@ -1,36 +1,31 @@
 @import "./global/colors.scss";
+@import "./global/fonts.scss";
 
 body {
   padding: 0;
   margin: 0;
-
   background-color: $demo-background !important;
   color: $color-foreground;
-
   display: flex;
   justify-content: center;
+  @include audiowide-regular();
 }
 
 .main4 {
   display: flex;
   height: $main4-height;
   justify-content: center;
-  // align-items: center;
 
   .wrapper {
     .jsx-component {
-      // background-color: $demo-background-2;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      // margin: 1rem 30rem;
 
       button {
-        opacity: 0.9;
         margin: 1rem;
-        font-family: "Silkscreen", sans-serif;
         background: $color-background;
         border-radius: 100%;
         border-width: 18px;
@@ -43,6 +38,14 @@ body {
         align-items: center;
         color: $demo-green-2;
 
+        // background-color: rgb(2, 100, 58);
+        box-shadow: rgb(104, 255, 22) 0px 0px 15px 0.5px;
+        background-image: linear-gradient(
+          90deg,
+          rgb(34, 106, 87) 0%,
+          rgb(3, 176, 94) 100%
+        );
+
         .text {
           flex: 2;
         }
@@ -50,40 +53,63 @@ body {
         .win {
           flex: 1;
           font-size: 5rem;
-          color: aquamarine;
+          // color: aqua;
+          // @include righteous-regular();
+          @include audiowide-regular();
+          color: $color-pink;
+          color: $color-orange;
+          color: $color-blue-light;
+          color: $color-cream;
         }
       }
       button:hover {
         opacity: 1;
       }
+      button:focus {
+        border-color: $demo-green-2;
+      }
 
       p,
       .counter {
         font-size: 2rem;
-        font-family: "Silkscreen", sans-serif;
-        margin-top: 0.5rem;
+        // font-family: "Silkscreen", sans-serif;
+        // margin-top: 0.5rem;
+        gap: 10px;
         color: $demo-blue-1;
+        @include audiowide-regular();
+
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
       }
 
       .counter {
         color: $color-yellow;
         width: 100%;
-      }
+        font-size: inherit;
+        margin-bottom: 2rem;
 
-      // @media screen and (max-width: 500px) {
-      //   background-color: yellow;
-      //   padding: 2rem;
-      // }
+        .dot {
+          width: 10px;
+          height: 10px;
+          font-size: 2rem;
+        }
+      }
     }
   }
 
   // background-color: $color-cream-2;
-  // width: 500px;
+  width: 500px;
   padding: 1rem 15rem;
   @media screen and (max-width: 1000px) {
     padding: 8px 8rem;
+    // background-color: greenyellow;
+    width: 450px;
   }
   @media screen and (max-width: 500px) {
     padding: 8px;
+    // background-color: blueviolet;
+    width: inherit;
   }
 }

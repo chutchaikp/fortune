@@ -123,18 +123,19 @@ const JsxComponent = () => {
 
       </button>
 
-      <span className='counter'>
+      <div className='counter'>
         {/* {_.padStart(counter, 2, '0')} */}
         {_.range(1, counter).map(() => {
-          return (<span style={{ margin: '8px', }}>
-            <img width={20} height={20}
+          return (<div className='dot'>
+            {/* <img width={10} height={10}
               draggable="false"
               class="emoji"
               alt="😷"
-              src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f637.svg" />
-          </span>)
+              src="https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/svg/1f637.svg" /> */}
+            .
+          </div>)
         })}
-      </span>
+      </div>
 
       <p>
         {prevs.join(', ')}

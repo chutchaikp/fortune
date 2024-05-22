@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Righteous&family=Roboto:wght@300;400;500;700&display=swap");
+
+// </style>
+// =========> Mixins
+// หรือแม้แต่การเซตค่าให้ property หลายๆตัวด้วยคำสั่งเดียวผ่าน @mixin ที่การทำงานคล้ายฟังก์ชันก็ยังทำได้
+// @mixin transform($property) {
+//   -webkit-transform: $property;
+//   -ms-transform: $property;
+//   transform: $property;
+// }
+// .box { @include transform(rotate(30deg)); }
+
+@mixin audiowide-regular() {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin roboto-light() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+@mixin roboto-regular() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+@mixin roboto-medium() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+@mixin roboto-bold() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin righteous-regular() {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
