@@ -1,10 +1,12 @@
 ### Web dev fundamental 
 
 - How to use Github 
-`git clone`
-`git add .`
-`git commit -m "commit"`
-`git push --all`
+```bash
+git clone
+git add .
+git commit -m "commit"
+git push --all
+```
 
 - How to .gitignore
 `# file .gitignore`
