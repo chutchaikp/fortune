@@ -1,11 +1,31 @@
 ### Web dev fundamental 
 
 - How to use Github 
+`git clone`
+`git add .`
+`git commit -m "commit"`
+`git push --all`
+
 - How to .gitignore
+`# file .gitignore`
+`# comment dependencies`
+`/node_modules`
+`/.env`
+
 - How to .env
+`# file .env`
+`PORT=88`
+`KEY=123456`
+
 - How to vscode, exclude files
+`file .vscode/settings.json`
+`"files.exclude": {    `
+`    "**/_____*.*": true    `
+`}`
+
 - How to snippet
 - How to verify unused and outdate package [npm-check or depcheck]
+`$ npm outdated -g`
 
 - How to use Promise
 - How to use 'scss' in React App
@@ -14,6 +34,11 @@
 - How to setInterval
 
 - How to use free host Netlify.com
+
+#### TODO
+- How to debounce
+- How to memorize (memo, useCallback)
+- How to custom hook
 
 <!-- # Getting Started with Create React App
 
