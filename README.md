@@ -101,8 +101,14 @@ clearInterval(interval.current)
 }
 
 ```
+
 - How to memorize (memo, useCallback)
-go to file?
+
+[Example memo](https://github.com/chutchaikp/fortune/blob/main/src/memorize/MemorizeApp.js)
+
+
+[Example useCallback](https://github.com/chutchaikp/fortune/blob/main/src/memorize/UsecallbackApp.js)
+
 
 #### TODO
 - How to custom hook
