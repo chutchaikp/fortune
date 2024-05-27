@@ -1,15 +1,18 @@
 
-// import Main from './Main';
-// import Main from './Main2.js'
-// import Main from './Main3.js'
+// import Main from './Main4.js'
 
-import Main from './Main4.js'
+// import DebounceApp from "./debounce/DebounceApp";
 
-// import './app.scss';
+import FontsApp from './fonts/FontsApp.js'
+
+import './App.scss'
+
 const app = () => {
   return (
-    <div >
-      <Main />
+    <div className="App" >
+      {/* <Main /> */}
+      {/* <DebounceApp /> */}
+      <FontsApp />
     </div>
   )
 }
