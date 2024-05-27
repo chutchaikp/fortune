@@ -1,0 +1,22 @@
+@import "../global/colors.scss";
+
+.UsecallbackApp {
+  font-family: Recoleta, sans-serif;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    input {
+      padding: 5px 10px;
+      font-size: 2rem;
+      border-radius: 10px;
+    }
+  }
+
+  .results {
+    font-size: 2rem;
+    color: $color-orange;
+  }
+}

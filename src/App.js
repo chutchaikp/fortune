@@ -3,7 +3,11 @@
 
 // import DebounceApp from "./debounce/DebounceApp";
 
-import FontsApp from './fonts/FontsApp.js'
+// import FontsApp from './fonts/FontsApp.js'
+
+// import MemorizeApp from './memorize/MemorizeApp.js'
+
+import UsecallbackApp from './memorize/UsecallbackApp.js'
 
 import './App.scss'
 
@@ -12,7 +16,9 @@ const app = () => {
     <div className="App" >
       {/* <Main /> */}
       {/* <DebounceApp /> */}
-      <FontsApp />
+      {/* <FontsApp /> */}
+      {/* <MemorizeApp /> */}
+      <UsecallbackApp />
     </div>
   )
 }
