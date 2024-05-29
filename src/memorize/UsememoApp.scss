@@ -1,10 +1,13 @@
 @import "../global/colors.scss";
 
-.UsecallbackApp {
+@import "../global/fonts.scss";
+
+.UsememoApp {
   font-family: Recoleta, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 400px;
 
   .inputs {
     display: flex;
@@ -20,7 +23,8 @@
     button {
       flex: 1;
       padding: 5px;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      font-family: Recoleta, sans-serif;
     }
   }
 
@@ -38,10 +42,20 @@
       color: #1f1f1f;
     }
   }
+
+  .lorem {
+    font-family: SFMMono, sans-serif;
+    color: rgb(57, 58, 52);
+    font-size: small;
+    line-height: 2;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+  }
 }
 
 body {
   font-family: Recoleta, sans-serif;
+  font-size: 1.5rem;
 }
 
 input[type="text"] {
@@ -68,5 +82,10 @@ input[type="text"] {
 
 .textWhite {
   color: #fff;
+  font-size: 2rem;
+}
+
+.textGreen {
+  color: #2e8555;
   font-size: 2rem;
 }

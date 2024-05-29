@@ -7,9 +7,10 @@
 
 // import MemorizeApp from './memorize/MemorizeApp.js'
 
-import UsecallbackApp from './memorize/UsecallbackApp.js'
+// import UsecallbackApp from './memorize/UsecallbackApp.js'
 
 import './App.scss'
+import UsememoApp from './memorize/UsememoApp.js';
 
 const app = () => {
   return (
@@ -18,7 +19,9 @@ const app = () => {
       {/* <DebounceApp /> */}
       {/* <FontsApp /> */}
       {/* <MemorizeApp /> */}
-      <UsecallbackApp />
+      {/* <UsecallbackApp /> */}
+
+      <UsememoApp />
     </div>
   )
 }
