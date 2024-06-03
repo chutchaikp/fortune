@@ -8,9 +8,9 @@ const Page = () => {
 
   }, [])
 
-  const func1 = () => {
+  // const func1 = () => {
 
-  }
+  // }
 
   const func2 = (para1) => {
 

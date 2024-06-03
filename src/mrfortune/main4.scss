@@ -1,15 +1,15 @@
-@import "./global/colors.scss";
-@import "./global/fonts.scss";
+@import '../global/colors.scss';
+@import '../global/fonts.scss';
 
-body {
-  padding: 0;
-  margin: 0;
-  background-color: $demo-background !important;
-  color: $color-foreground;
-  display: flex;
-  justify-content: center;
-  @include audiowide-regular();
-}
+// body {
+//   padding: 0;
+//   margin: 0;
+//   background-color: $demo-background !important;
+//   color: $color-foreground;
+//   display: flex;
+//   justify-content: center;
+//   @include audiowide-regular();
+// }
 
 .main4 {
   display: flex;
@@ -40,11 +40,7 @@ body {
 
         // background-color: rgb(2, 100, 58);
         box-shadow: rgb(104, 255, 22) 0px 0px 15px 0.5px;
-        background-image: linear-gradient(
-          90deg,
-          rgb(34, 106, 87) 0%,
-          rgb(3, 176, 94) 100%
-        );
+        background-image: linear-gradient(90deg, rgb(34, 106, 87) 0%, rgb(3, 176, 94) 100%);
 
         .text {
           flex: 2;
@@ -53,13 +49,15 @@ body {
         .win {
           flex: 1;
           font-size: 5rem;
-          // color: aqua;
-          // @include righteous-regular();
-          @include audiowide-regular();
+          // @include audiowide-regular();
           color: $color-pink;
           color: $color-orange;
           color: $color-blue-light;
           color: $color-cream;
+          color: white;
+          font-weight: 700;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
       }
       button:hover {
@@ -76,7 +74,7 @@ body {
         // margin-top: 0.5rem;
         gap: 10px;
         color: $demo-blue-1;
-        @include audiowide-regular();
+        // @include audiowide-regular();
 
         display: flex;
         gap: 10px;

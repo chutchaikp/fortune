@@ -1,11 +1,12 @@
-@import "../global/colors.scss";
+// @import "../global/colors.scss";
+@import '../global/colors.scss';
 
 .debounceApp {
   width: 400px;
   // background-color: silver;
   // flex: 1;
 
-  input[type="text"] {
+  input[type='text'] {
     padding: 10px;
     font-size: 1.5rem;
     border-radius: 10px;

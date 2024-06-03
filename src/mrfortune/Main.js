@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import confetti from "canvas-confetti";
-import _ from "lodash";
-import data from "./data.json"; // assert {type: 'json'};
+import { useEffect, useState } from 'react';
+import confetti from 'canvas-confetti';
+import _ from 'lodash';
+import data from './data.json'; // assert {type: 'json'};
 
-import "./main.scss";
-import toast, { ToastBar, Toaster } from "react-hot-toast";
+import './main.scss';
+import toast, { ToastBar, Toaster } from 'react-hot-toast';
 
 // GENERATE 1 NUMBER EXCEPT PREV NUMBER FROM JSON
 
 // eslint-disable-next-line no-extend-native
 String.prototype.reverse = function () {
-  return this.split("").reverse().join("");
+  return this.split('').reverse().join('');
 };
 
 let timer = null;
@@ -68,7 +68,7 @@ const Main = () => {
   };
 
   function reverseString(str) {
-    return str.split("").reverse().join("");
+    return str.split('').reverse().join('');
   }
 
   const generateNumberV2 = () => {
@@ -169,8 +169,7 @@ const Main = () => {
   };
 
   // timer utility
-  const saveSettings = () =>
-    new Promise((resolve) => setTimeout(resolve, 120 * 1000));
+  const saveSettings = () => new Promise((resolve) => setTimeout(resolve, 120 * 1000));
 
   const handleStartTimer = () => {
     if (isRunning === true) {
@@ -194,9 +193,9 @@ const Main = () => {
 
     clearInterval(timer);
     timer = null;
-    toast("Timer Stoped!", {
-      icon: "👏",
-      style: { borderRadius: "10px", background: "#333", color: "#fff" },
+    toast('Timer Stoped!', {
+      icon: '👏',
+      style: { borderRadius: '10px', background: '#333', color: '#fff' },
     });
   };
 
@@ -255,19 +254,16 @@ const Main = () => {
   // variable
   // execute function "resolveAfter3Sec" only 1 time only
   const resolveAfter3Sec = new Promise((resolve, reject) => {
-    console.log(
-      "resolveAfter3Sec - set time out 3 seconds now at " +
-        new Date().toISOString()
-    );
+    console.log('resolveAfter3Sec - set time out 3 seconds now at ' + new Date().toISOString());
     setTimeout(resolve, 3000);
   });
   const handleToast1 = () => {
     // debugger;
     toast.promise(resolveAfter3Sec, {
       // pending: "Promise is pending",
-      loading: "Promise is loading xxx",
-      success: "Promise resolved 👌",
-      error: "Promise rejected 🤯",
+      loading: 'Promise is loading xxx',
+      success: 'Promise resolved 👌',
+      error: 'Promise rejected 🤯',
     });
   };
 
@@ -276,8 +272,7 @@ const Main = () => {
   const functionThatReturnPromise = () => {
     return new Promise((resolve, reject) => {
       console.log(
-        "functionThatReturnPromise - set time out 3 seconds now at " +
-          new Date().toISOString()
+        'functionThatReturnPromise - set time out 3 seconds now at ' + new Date().toISOString()
       );
       // Do AJAX
       setTimeout(resolve, 3000);
@@ -286,15 +281,15 @@ const Main = () => {
 
   const handleToast2 = () => {
     toast.promise(functionThatReturnPromise(), {
-      loading: "Promise is loading",
+      loading: 'Promise is loading',
       // pending: "Promise is pending",
-      success: "Promise resolved 👌",
-      error: "Promise rejected 🤯",
+      success: 'Promise resolved 👌',
+      error: 'Promise rejected 🤯',
     });
   };
 
   const handleToast3 = () => {
-    toast.success("this is message", { icon: "👏" });
+    toast.success('this is message', { icon: '👏' });
   };
 
   return (
@@ -319,9 +314,9 @@ const Main = () => {
         <button onClick={generateNumber}>GENERATE V1 </button>
         <button onClick={generateNumberV2}>GENERATE V2 </button>
 
-        <span className="win">{_.padStart(win, 2, "0")}</span>
-        <span className="fails">{fails.join(", ")}</span>
-        <span className="prevs">{prevs.join(", ")}</span>
+        <span className="win">{_.padStart(win, 2, '0')}</span>
+        <span className="fails">{fails.join(', ')}</span>
+        <span className="prevs">{prevs.join(', ')}</span>
       </div>
 
       <div>
@@ -330,9 +325,9 @@ const Main = () => {
           {(t) => (
             <ToastBar
               style={{
-                borderRadius: "20px",
-                background: "#546",
-                color: "#fff",
+                borderRadius: '20px',
+                background: '#546',
+                color: '#fff',
               }}
               toast={t}
             >
@@ -340,9 +335,7 @@ const Main = () => {
                 <>
                   {icon}
                   {message}
-                  {t.type !== "loading" && (
-                    <button onClick={() => toast.dismiss(t.id)}>X</button>
-                  )}
+                  {t.type !== 'loading' && <button onClick={() => toast.dismiss(t.id)}>X</button>}
                   {/* {t.type === "loading" && <span>waiting ...</span>} */}
                 </>
               )}

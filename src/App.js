@@ -1,5 +1,4 @@
-
-// import Main from './Main4.js'
+import Main from './mrfortune/Main4.js';
 
 // import DebounceApp from "./debounce/DebounceApp";
 
@@ -9,20 +8,19 @@
 
 // import UsecallbackApp from './memorize/UsecallbackApp.js'
 
-import './App.scss'
-import UsememoApp from './memorize/UsememoApp.js';
+import './App.scss';
+// import UsememoApp from './memorize/UsememoApp.js';
 
 const app = () => {
   return (
-    <div className="App" >
-      {/* <Main /> */}
+    <div className="App">
+      <Main />
       {/* <DebounceApp /> */}
       {/* <FontsApp /> */}
       {/* <MemorizeApp /> */}
       {/* <UsecallbackApp /> */}
-
-      <UsememoApp />
+      {/* <UsememoApp /> */}
     </div>
-  )
-}
+  );
+};
 export default app;
