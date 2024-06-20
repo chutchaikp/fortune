@@ -1,8 +1,6 @@
-// theme colors
-// C:\Users\wit\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\theme-defaults\themes
+// theme colors // C:\Users\wit\AppData\Local\Programs\Microsoft VS Code\resources\app\extensions\theme-defaults\themes
 
 import { useEffect, useState, useRef } from 'react';
-import _ from 'lodash';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 
 import data from './data.json'; // assert {type: 'json'};
@@ -35,16 +33,9 @@ const JsxComponent = () => {
   // console.log('JsxComponent - render...');
 
   const interval = useRef();
-  const [counter, setCounter] = useState(0);
-
-  const [prevs, setPrevs] = useState([]);
-  const [num, setNum] = useState(0);
 
   const [prevs1, setPrevs1] = useState([]);
   const [prevs2, setPrevs2] = useState([]);
-
-  const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(0);
 
   const [winWeight1, setWinWeight1] = useState(0);
   const [weight1Counter, setWeight1Counter] = useState(0);
