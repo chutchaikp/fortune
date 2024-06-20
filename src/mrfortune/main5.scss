@@ -1,0 +1,143 @@
+@import '../global/colors.scss';
+@import '../global/fonts.scss';
+
+// body {
+//   padding: 0;
+//   margin: 0;
+//   background-color: $demo-background !important;
+//   color: $color-foreground;
+//   display: flex;
+//   justify-content: center;
+//   @include audiowide-regular();
+// }
+
+.main5 {
+  display: flex;
+  height: $main4-height;
+  justify-content: center;
+
+  .wrapper {
+    .jsx-component {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+          margin: 1rem;
+          background: $color-background;
+          border-radius: 100%;
+          border-width: 18px;
+          border-color: #145ef2;
+          cursor: pointer;
+          width: 8rem;
+          height: 8rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          // color: $demo-green-2;
+          box-shadow: rgb(48, 140, 244) 0px 0px 15px 0.5px;
+          background-image: linear-gradient(90deg, rgb(63, 82, 254) 0%, rgb(86, 50, 229) 100%);
+
+          .text {
+            flex: 2;
+          }
+
+          .win {
+            flex: 1;
+            font-size: 2rem;
+            // @include audiowide-regular();
+            color: $color-pink;
+            color: $color-orange;
+            color: $color-blue-light;
+            color: $color-cream;
+            color: white;
+            font-weight: 700;
+            // font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+            //   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          }
+
+          &:nth-of-type(1) {
+            border-color: $color-purple;
+            box-shadow: rgb(255, 22, 205) 0px 0px 15px 0.5px;
+            background-image: linear-gradient(90deg, rgb(84, 1, 100) 0%, rgb(198, 70, 241) 100%);
+          }
+        }
+        button:hover {
+          opacity: 1;
+        }
+        button:focus {
+          border-color: #6032f7;
+
+          &:nth-of-type(1) {
+            border-color: #8b059c;
+          }
+        }
+      }
+
+      p,
+      .counter {
+        font-size: 2rem;
+        // font-family: "Silkscreen", sans-serif;
+        // margin-top: 0.5rem;
+        gap: 10px;
+        color: $demo-blue-1;
+        // @include audiowide-regular();
+
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .counter {
+        color: $color-yellow;
+        width: 100%;
+        font-size: inherit;
+        margin-bottom: 2rem;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+          font-size: 2rem;
+        }
+      }
+
+      .witems {
+        .witem,
+        .witemGroup {
+          margin-top: 1rem;
+          color: white;
+
+          span {
+            margin: 0.3rem;
+          }
+        }
+        .witem {
+          color: #414141;
+        }
+      }
+    }
+  }
+
+  // background-color: $color-cream-2;
+  // width: 500px;
+  // padding: 1rem 15rem;
+
+  @media screen and (max-width: 1000px) {
+    padding: 8px 8rem;
+    // background-color: greenyellow;
+    width: 450px;
+  }
+  @media screen and (max-width: 500px) {
+    padding: 8px;
+    // background-color: blueviolet;
+    width: inherit;
+  }
+}

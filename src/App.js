@@ -1,4 +1,6 @@
-import Main from './mrfortune/Main4.js';
+import Main from './mrfortune/Main5.js';
+
+// import Main from './mrfortune/Main4.js';
 
 // import DebounceApp from "./debounce/DebounceApp";
 
