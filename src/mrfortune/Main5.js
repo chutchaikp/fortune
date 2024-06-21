@@ -44,15 +44,13 @@ const JsxComponent = () => {
   const [weight2Counter, setWeight2Counter] = useState(0);
 
   const stop = () => {
-    toast('DONE', { icon: '👏' });
-
+    toast('OK', { icon: '👏👏👏' });
     clearInterval(interval.current);
   };
 
   useEffect(() => {
     console.log(`Weight counter: ${weight1Counter}`);
-
-    if (weight1Counter > 100) {
+    if (weight1Counter > 188) {
       stop();
       setWeight1Counter(0);
     }
@@ -60,8 +58,7 @@ const JsxComponent = () => {
 
   useEffect(() => {
     console.log(`Weight2 counter: ${weight2Counter}`);
-
-    if (weight2Counter > 100) {
+    if (weight2Counter > 188) {
       stop();
       setWeight2Counter(0);
     }
@@ -209,22 +206,21 @@ const JsxComponent = () => {
     try {
       e.preventDefault();
 
-      if (weight1Counter > 0 && weight1Counter < 100) {
+      if (weight1Counter > 0 && weight1Counter < 188) {
         clearInterval(interval.current);
         setWeight1Counter(0);
         return;
       }
-      if (weight1Counter > 100) {
+      if (weight1Counter > 188) {
         setWeight1Counter(0);
       }
 
       interval.current = setInterval(() => {
         let n = weight1[Math.floor(Math.random() * weight1.length)];
         // console.log(`new random ${n} `);
-
         setWeight1Counter((w) => w + 1);
         setWinWeight1(n);
-      }, 50);
+      }, 30);
     } catch (error) {
       console.log(error);
       stop();
@@ -235,12 +231,12 @@ const JsxComponent = () => {
     try {
       e.preventDefault();
 
-      if (weight2Counter > 0 && weight2Counter < 100) {
+      if (weight2Counter > 0 && weight2Counter < 188) {
         clearInterval(interval.current);
         setWeight2Counter(0);
         return;
       }
-      if (weight2Counter > 100) {
+      if (weight2Counter > 188) {
         setWeight2Counter(0);
       }
 
@@ -249,7 +245,7 @@ const JsxComponent = () => {
         console.log(`n for winWeight2 is ${n}`);
         setWeight2Counter((w) => w + 1);
         setWinWeight2(n);
-      }, 50);
+      }, 20);
     } catch (error) {
       console.log(error);
       stop();
