@@ -1,4 +1,4 @@
-import Main from './mrfortune/Main5.js';
+import Main from './mrfortune/Main6.js';
 
 // import Main from './mrfortune/Main4.js';
 

@@ -1,0 +1,23 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+export const winSlice = createSlice({
+  name: 'win',
+  initialState: {
+    win1: 0,
+    win2: 0,
+  },
+  reducers: {
+    win1Up: (state) => {
+      state.win1 += 1;
+    },
+    win2Up: (state) => {
+      state.win2 += 1;
+    },
+    reset: (state) => {
+      state.win1 = 0;
+      state.win2 = 0;
+    },
+  },
+});
+
+export default winSlice.reducer;
