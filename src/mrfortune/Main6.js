@@ -21,7 +21,7 @@ const Main6 = () => {
 
   useEffect(() => {
     // random number between 50 - 100
-    const num = 100 - Math.floor(Math.random() * 50);
+    const num = 200 - Math.floor(Math.random() * 50);
     setCount(num);
     console.log(`count: ${num}`);
   }, []);
@@ -319,6 +319,10 @@ const JsxComponent = ({ count = 20 }) => {
           )}
         </Toaster>
       </div>
+
+      <div className="status2">count: {count}</div>
+      <div className="status2">c1: {weight1Counter}</div>
+      <div className="status2">c2: {weight2Counter}</div>
     </div>
   );
 };
@@ -329,11 +333,7 @@ const WeightBox = ({ data, isGroup = true }) => {
       // if (parseInt(data[idx]) === 1 && isGroup === true) {
       //   debugger;
       // }
-      if (
-        typeof data[idx - 1] === 'number' &&
-        isGroup === true &&
-        data[idx - 1] !== data[idx]
-      ) {
+      if (typeof data[idx - 1] === 'number' && isGroup === true && data[idx - 1] !== data[idx]) {
         return <span key={String(idx)}> xx {d}</span>;
       } else {
         return <span key={String(idx)}>{d}</span>;

@@ -24,6 +24,11 @@
       align-items: center;
       padding: 1rem;
 
+      .status2 {
+        color: #bedc00;
+        font-weight: 600;
+      }
+
       .buttons {
         display: flex;
         flex-direction: row;
@@ -144,4 +149,8 @@
     // background-color: blueviolet;
     width: inherit;
   }
+}
+
+.text-status {
+  color: '#ffffff';
 }
