@@ -1,4 +1,4 @@
-import './FontsApp.scss'
+import './FontsApp.scss';
 const FontsApp = () => {
   return (
     <div className="FontsApp">
@@ -11,6 +11,6 @@ const FontsApp = () => {
         qui, alias earum, consequuntur consequatur eaque iusto corporis distinctio?
       </div>
     </div>
-  )
-}
-export default FontsApp
+  );
+};
+export default FontsApp;
