@@ -323,6 +323,8 @@ const JsxComponent = ({ count = 20 }) => {
       <div className="status2">count: {count}</div>
       <div className="status2">c1: {weight1Counter}</div>
       <div className="status2">c2: {weight2Counter}</div>
+
+      <div className="update-date">{new Date().toISOString()}</div>
     </div>
   );
 };

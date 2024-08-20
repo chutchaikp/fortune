@@ -27,6 +27,15 @@
       .status2 {
         color: #bedc00;
         font-weight: 600;
+        margin-top: 20px;
+      }
+
+      .update-date {
+        color: #666;
+        font-weight: 700;
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
       }
 
       .buttons {
@@ -50,9 +59,13 @@
           // box-shadow: rgb(48, 244, 185) 0px 0px 15px 0.5px;
           // background-image: linear-gradient(90deg, rgb(8, 107, 69) 0%, rgb(32, 244, 131) 100%);
 
-          border-color: #d8f214;
-          box-shadow: rgb(236, 248, 127) 0px 0px 15px 0.5px;
-          background-image: linear-gradient(90deg, rgb(92, 109, 7) 0%, rgb(226, 244, 32) 100%);
+          // border-color: #d8f214;
+          // box-shadow: rgb(236, 248, 127) 0px 0px 15px 0.5px;
+          // background-image: linear-gradient(90deg, rgb(92, 109, 7) 0%, rgb(226, 244, 32) 100%);
+
+          border-color: red;
+          box-shadow: rgb(252, 41, 8) 0px 0px 15px 0.5px;
+          background-image: linear-gradient(90deg, rgb(173, 2, 2) 0%, rgb(250, 19, 19) 100%);
 
           .text {
             flex: 2;
@@ -72,10 +85,15 @@
             //   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
           }
 
+          // &:nth-of-type(1) {
+          //   border-color: $color-blue-second;
+          //   box-shadow: rgb(41, 22, 255) 0px 0px 15px 0.5px;
+          //   background-image: linear-gradient(90deg, rgb(5, 3, 144) 0%, rgb(64, 67, 241) 100%);
+          // }
           &:nth-of-type(1) {
-            border-color: $color-blue-second;
-            box-shadow: rgb(41, 22, 255) 0px 0px 15px 0.5px;
-            background-image: linear-gradient(90deg, rgb(5, 3, 144) 0%, rgb(64, 67, 241) 100%);
+            border-color: red;
+            box-shadow: rgb(252, 41, 8) 0px 0px 15px 0.5px;
+            background-image: linear-gradient(90deg, rgb(173, 2, 2) 0%, rgb(250, 19, 19) 100%);
           }
         }
         button:hover {
