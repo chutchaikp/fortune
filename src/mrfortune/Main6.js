@@ -55,6 +55,8 @@ const JsxComponent = ({ count = 20 }) => {
   const [winWeight2, setWinWeight2] = useState(0);
   const [weight2Counter, setWeight2Counter] = useState(0);
 
+  const [tmpdata, setTmpdata] = useState('');
+
   const stop = () => {
     toast('OK', { icon: '👏👏👏' });
     clearInterval(interval.current);
@@ -214,6 +216,20 @@ const JsxComponent = ({ count = 20 }) => {
   //   }
   // };
 
+  useEffect(() => {
+    let tmps = [];
+    data.forEach((ele) => {
+      let win2 = ele.win2;
+
+      tmps.push(win2);
+    });
+
+    // sort
+    const dataSorted = tmps.sort();
+
+    setTmpdata(dataSorted.join(','));
+  }, []);
+
   const handleWeight1 = (e) => {
     try {
       e.preventDefault();
@@ -323,6 +339,8 @@ const JsxComponent = ({ count = 20 }) => {
       <div className="status2">count: {count}</div>
       <div className="status2">c1: {weight1Counter}</div>
       <div className="status2">c2: {weight2Counter}</div>
+
+      <div className="status3"> tmps: {tmpdata} </div>
 
       <div className="update-date">{new Date().toISOString()}</div>
     </div>
